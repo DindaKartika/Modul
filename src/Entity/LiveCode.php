@@ -32,11 +32,7 @@ use Drupal\Core\Entity\ContentEntityInterface;
  *   base_table = "live_code",
  *   entity_keys = {
  *      "id" = "id",
- *      "nama_live_code" = "nama_live_code",
- *      "banyak_soal" = "banyak_soal",
- *      "bobot_nilai" = "bobot_nilai",
- *      "tanggal_pelaksanaan" = "tanggal_pelaksanaan",
- *      "mata_pelajaran" = "mata_pelajaran",
+ *     "label" = "name",
  *   },
  *   links = {
  *   },
@@ -45,9 +41,9 @@ use Drupal\Core\Entity\ContentEntityInterface;
 class LiveCode extends ContentEntityBase implements ContentEntityInterface {
 
     /**
-     * {@inheritdoc}
-     */
-    public static function BaseFieldDefinitions(EntityTypeInterface $entity_type) {
+   * {@inheritdoc}
+   */
+    public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
         $fields['id'] = BaseFieldDefinition::create('integer')
             ->setLabel(t('ID'))
             ->setDescription(t('id live code'))

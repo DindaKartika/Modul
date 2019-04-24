@@ -32,9 +32,7 @@ use Drupal\Core\Entity\ContentEntityInterface;
  *   base_table = "direksis",
  *   entity_keys = {
  *     "id" = "id",
- *     "nama_lengkap" = "nama_lengkap",
- *     "telepon" = "telepon",
- *     "jabatan" = "jabatan",
+ *     "label" = "name",
  *   },
  *  links = { 
  *  },
@@ -43,9 +41,9 @@ use Drupal\Core\Entity\ContentEntityInterface;
 class Direksis extends ContentEntityBase implements ContentEntityInterface {
 
     /**
-     * {@inheritdoc}
-     */
-    public static function BaseFieldDefinitions(EntityTypeInterface $entity_type) {
+   * {@inheritdoc}
+   */
+    public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
         $fields['id'] = BaseFieldDefinition::create('integer')
             ->setLabel(t('ID'))
             ->setDescription(t('ID Direksi'))

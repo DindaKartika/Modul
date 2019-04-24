@@ -42,10 +42,7 @@ use Drupal\Core\Entity\ContentEntityInterface;
  */
 class Mentor extends ContentEntityBase implements ContentEntityInterface {
 
-    /**
-     * {@inheritdoc}
-     */
-    public static function BaseFieldDefinitions(EntityTypeInterface $entity_type) {
+    public static function BaseFieldDefinition(EntityTypeInterface $entity_type) {
         $fields['id'] = BaseFieldDefinition::create('integer')
             ->setLabel(t('ID'))
             ->setDescription(t('ID Mentor'))

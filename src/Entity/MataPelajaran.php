@@ -32,9 +32,7 @@ use Drupal\Core\Entity\ContentEntityInterface;
  *   base_table = "mata_pelajaran",
  *   entity_keys = {
  *      "id" = "id",
- *      "mata_pelajaran" = "mata_pelajaran",
- *      "jadwal_dimulai" = "jadwal_dimulai",
- *      "jadwal_selesai" = "jadwal_selesai",
+ *     "label" = "name",
  *   },
  *   links = {
  *   },
@@ -43,9 +41,9 @@ use Drupal\Core\Entity\ContentEntityInterface;
 class MataPelajaran extends ContentEntityBase implements ContentEntityInterface {
 
     /**
-     * {@inheritdoc}
-     */
-    public static function BaseFieldDefinitions(EntityTypeInterface $entity_type) {
+   * {@inheritdoc}
+   */
+    public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
         $fields['id'] = BaseFieldDefinition::create('integer')
             ->setLabel(t('ID'))
             ->setDescription(t('ID Mata Pelajaran'))
