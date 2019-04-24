@@ -33,10 +33,6 @@ use Drupal\Core\Entity\ContentEntityInterface;
  *   entity_keys = {
  *      "id" = "id",
  *      "label" = "name",
- *      "uuid" = "uuid",
- *      "uid" = "user_id",
- *      "langcode" = "langcode",
- *      "status" = "status",
  *   },
  *   links = { 
  *   },
@@ -45,28 +41,17 @@ use Drupal\Core\Entity\ContentEntityInterface;
 class Mentee extends ContentEntityBase implements ContentEntityInterface {
 
     /**
-     * {@inheritdoc}
-     */
-    public static function BaseFieldDefinitions(EntityTypeInterface $entity_type) {
-        $fields['id_mentee'] = BaseFieldDefinition::create('string')
+   * {@inheritdoc}
+   */
+    public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+        $fields['id'] = BaseFieldDefinition::create('integer')
             ->setLabel(t('ID'))
-            ->setDescription(t('The id of mentee.'))
-            // ->setReadOnly(TRUE);
-            ->setSettings(array(
-                'max_length' => 4,
-                'text_processing' => 0,
-            ))
-            ->setDisplayOptions('view', array(
-                'label' => 'above',
-                'type' => 'string',
-                'weight' => -6,
-            ))
-            ->setDisplayOptions('form', array(
-                'type' => 'string_textfield',
-                'weight' => -6,
-            ))
-            ->setDisplayConfigurable('form', TRUE)
-            ->setDisplayConfigurable('view', TRUE);
+            ->setDescription(t('ID Mentee'))
+            ->setReadOnly(TRUE);
+        $fields['uuid'] = BaseFieldDefinition::create('uuid')
+            ->setLabel(t('UUID'))
+            ->setDescription(t('The UUID of the Contact entity.'))
+            ->setReadOnly(TRUE);
         $fields['nama_lengkap'] = BaseFieldDefinition::create('string')
             ->setLabel(t('nama_lengkap'))
             ->setDescription(t('nama lengkap mentee'))
