@@ -32,9 +32,7 @@ use Drupal\Core\Entity\ContentEntityInterface;
  *   base_table = "mentor",
  *   entity_keys = {
  *      "id" = "id",
- *      "nama_lengkap" = "nama_lengkap",
- *      "telepon" = "telepon",
- *      "mata_pelajaran" = "mata_pelajaran",
+ *     "label" = "name",
  *   },
  *   links = {
  *   },
@@ -42,7 +40,10 @@ use Drupal\Core\Entity\ContentEntityInterface;
  */
 class Mentor extends ContentEntityBase implements ContentEntityInterface {
 
-    public static function BaseFieldDefinition(EntityTypeInterface $entity_type) {
+    /**
+   * {@inheritdoc}
+   */
+    public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
         $fields['id'] = BaseFieldDefinition::create('integer')
             ->setLabel(t('ID'))
             ->setDescription(t('ID Mentor'))
@@ -109,7 +110,7 @@ class Mentor extends ContentEntityBase implements ContentEntityInterface {
             ))
             ->setDisplayConfigurable('form', TRUE)
             ->setDisplayConfigurable('view', TRUE);
-        return $field;
+        return $fields;
     }
 }
 ?>

@@ -3,7 +3,7 @@
 namespace Drupal\hello_world\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
-use Drupal\Core\FIeld\BaseFieldDefinition;
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 

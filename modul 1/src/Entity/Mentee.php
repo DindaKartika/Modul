@@ -48,13 +48,6 @@ class Mentee extends ContentEntityBase implements ContentEntityInterface {
             ->setLabel(t('ID'))
             ->setDescription(t('ID Mentee'))
             ->setReadOnly(TRUE);
-        // $fields['uuid'] = BaseFieldDefinition::create('uuid')
-        //     ->setLabel(t('UUID'))
-        //     ->setDescription(t('The UUID of the Contact entity.'))
-        //     ->setReadOnly(TRUE);
-        // $fields['langcode'] = BaseFieldDefinition::create('language')
-        //     ->setLabel(t('Language code'))
-        //     ->setDescription(t('The language code of Contact entity.'));
         $fields['nama_lengkap'] = BaseFieldDefinition::create('string')
             ->setLabel(t('nama_lengkap'))
             ->setDescription(t('nama lengkap mentee'))
