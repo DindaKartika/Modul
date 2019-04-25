@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains alta.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function alta_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the alta module.
+    case 'help.page.alta':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
